@@ -29,10 +29,11 @@ extents = Vector2( 160, 224 )
 [node name="KinematicBody2D" type="KinematicBody2D" index="0"]
 
 input_pickable = false
-collision_layer = 1
+collision_layer = 9
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Pickable" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -53,7 +54,7 @@ script = ExtResource( 4 )
 position = Vector2( 224, 0 )
 shape = SubResource( 3 )
 script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }

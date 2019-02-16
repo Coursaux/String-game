@@ -14,6 +14,17 @@ config/name="String"
 run/main_scene="res://Character.tscn"
 config/icon="res://icon.png"
 
+[layer_]
+
+Layer=false
+
+[layer_names]
+
+2d_physics/layer_1="walls"
+2d_physics/layer_2="box"
+2d_physics/layer_3="shooty_things"
+2d_physics/layer_4="fan_region"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
