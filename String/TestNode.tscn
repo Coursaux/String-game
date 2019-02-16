@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="Node2D" index="0"]
+
+position = Vector2( 286, 240 )
+_sections_unfolded = [ "Visibility" ]
+
+
