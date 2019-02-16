@@ -17,9 +17,9 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="character" type="KinematicBody2D" index="0"]
+[node name="character" type="KinematicBody2D"]
 
-position = Vector2( 192, 128 )
+position = Vector2( 32, 32 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
