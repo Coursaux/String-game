@@ -1,9 +1,13 @@
 extends KinematicBody2D
 
 var motion = Vector2()
+var speedup = 0
+
+func init(speed):
+	speedup = speed
 
 func _physics_process(delta):
-	motion.x = -200
+	motion.x = -300 - speedup
 	var collision = move_and_collide(motion * delta)
 	if collision:
 		get_tree().quit()
