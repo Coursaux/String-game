@@ -38,11 +38,11 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-position = Vector2( 0, 4.76837e-07 )
+position = Vector2( 0, 4.76837e-007 )
 scale = Vector2( 0.284444, 0.284444 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 5
+frame = 4
 playing = true
 _sections_unfolded = [ "Transform" ]
 
