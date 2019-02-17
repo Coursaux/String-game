@@ -10,7 +10,7 @@ func _physics_process(delta):
 	motion.x = -300 - speedup
 	var collision = move_and_collide(motion * delta)
 	if collision:
-		get_tree().quit()
+		get_tree().change_scene("res://MainMenu.tscn")
 
 func _on_Timer_timeout():
 	hide()
