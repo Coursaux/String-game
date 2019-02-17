@@ -18,6 +18,15 @@ wait_time = 1.0
 one_shot = false
 autostart = true
 
+[node name="Speedup" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
 [connection signal="timeout" from="Spawn" to="." method="_on_Timer_timeout"]
+
+[connection signal="timeout" from="Speedup" to="." method="_on_Speedup_timeout"]
 
 
