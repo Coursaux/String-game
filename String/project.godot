@@ -14,6 +14,13 @@ config/name="String"
 run/main_scene="res://Character.tscn"
 config/icon="res://icon.png"
 
+[physics]
+
+common/physics_fps=240
+2d/physics_engine="GodotPhysics"
+2d/default_linear_damp=2.0
+2d/default_angular_damp=2
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

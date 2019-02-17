@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Rope/Hook.gd" type="Script" id=1]
+[ext_resource path="res://Rope/Hook.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 1.0
+height = 1.0
+
+[node name="Node2D" type="Node2D"]
+
+script = ExtResource( 1 )
+segments = 50
+
+[node name="Anchor" type="StaticBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor" index="0"]
+
+position = Vector2( -0.496121, -0.233442 )
+scale = Vector2( 0.77478, 0.678596 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Anchor/CollisionShape2D" index="0"]
+
+position = Vector2( 0.325189, -5.10249 )
+scale = Vector2( 1.29069, 1.51928 )
+texture = ExtResource( 2 )
+
+

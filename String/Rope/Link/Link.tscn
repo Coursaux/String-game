@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="PinJoint2D" type="PinJoint2D"]
+
+node_a = NodePath("")
+node_b = NodePath("")
+bias = 0.9
+disable_collision = true
+softness = 0.5
+
+
