@@ -12,7 +12,8 @@ height = 1.0
 [node name="Node2D" type="Node2D"]
 
 script = ExtResource( 1 )
-segments = 50
+segments = 20
+segLength = 10
 
 [node name="Anchor" type="StaticBody2D" parent="." index="0"]
 
@@ -29,11 +30,13 @@ bounce = 0.0
 position = Vector2( -0.496121, -0.233442 )
 scale = Vector2( 0.77478, 0.678596 )
 shape = SubResource( 1 )
+disabled = true
 
 [node name="Sprite" type="Sprite" parent="Anchor/CollisionShape2D" index="0"]
 
-position = Vector2( 0.325189, -5.10249 )
+position = Vector2( 0.393932, 0.126462 )
 scale = Vector2( 1.29069, 1.51928 )
 texture = ExtResource( 2 )
+offset = Vector2( -0.0532607, -12.1713 )
 
 

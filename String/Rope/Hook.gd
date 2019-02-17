@@ -4,7 +4,8 @@ const pin = preload("res://Rope/Pin/Pin.tscn")
 const link = preload("res://Rope/Link/Link.tscn")
 const box = preload("res://Rope/Box.tscn")
 
-export (int) var segments = 50
+export (int) var segments = 20
+export (int) var segLength = 10;
 
 func _ready():
     var parent = $Anchor
@@ -25,7 +26,7 @@ func addBox(parent):
 func addPin(parent):
     var p = pin.instance()
     p.position = parent.position
-    p.position.y += 5
+    p.position.y += segLength
     add_child(p)
     return p
 
