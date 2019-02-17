@@ -14,7 +14,6 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-
 func _on_Timer_timeout():
 	spawn()
 	$Spawn.wait_time = rand_range(1, 2);

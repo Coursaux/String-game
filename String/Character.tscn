@@ -28,10 +28,10 @@ position = Vector2( 64, 64 )
 scale = Vector2( 1.5, 1.5 )
 input_pickable = false
 collision_layer = 1
-collision_mask = 1
+collision_mask = 2
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -42,7 +42,7 @@ position = Vector2( 0, 4.76837e-07 )
 scale = Vector2( 0.284444, 0.284444 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 5
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
