@@ -5,6 +5,10 @@ var speedup = 0
 
 func init(speed):
 	speedup = speed
+	$Bullets.wait_time = rand_range(0.8, 2);
+	
+func _ready():
+	spawn()
 
 func _physics_process(delta):
 	motion.x = -300 - speedup
@@ -16,16 +20,13 @@ func _on_Timer_timeout():
 	hide()
 	$CollisionShape2D.disabled = true
 
-func _ready():
-	var rand = rand_range(1, 7)
-	if rand >= 6:
-		spawn()
-
 func spawn():
-	var obstacle = preload("res://Gun.tscn")
+	var obstacle = preload("res://Bullet.tscn")
 	var obstacleInstance = obstacle.instance()
 	obstacleInstance.init(speedup)
-	var position = get_position()
-	position.x = position.x - 60
-	obstacleInstance.set_position(position)
+	obstacleInstance.set_position(get_position())
 	get_node("/root/Main").add_child(obstacleInstance)
+
+
+func _on_Bullets_timeout():
+	spawn()

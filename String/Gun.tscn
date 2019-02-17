@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Gun.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/cannon.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[node name="Gun" type="KinematicBody2D" index="0"]
+
+position = Vector2( 64, 32 )
+input_pickable = false
+collision_layer = 2
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 0.25, 0.250216 )
+scale = Vector2( 0.16623, 0.166229 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 5.2
+one_shot = false
+autostart = true
+
+[node name="Bullets" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[connection signal="timeout" from="Bullets" to="." method="_on_Bullets_timeout"]
+
+
