@@ -1,18 +1,60 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
-[ext_resource path="res://ParallaxBackground.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Camera2D.gd" type="Script" id=3]
-[ext_resource path="res://Character.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Rope/Hook.tscn" type="PackedScene" id=5]
-[ext_resource path="res://GUI.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Sound/Wavy.wav" type="AudioStream" id=7]
+[ext_resource path="res://ParallaxLayer.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Clouds/clouds2.png" type="Texture" id=3]
+[ext_resource path="res://Ground.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/Ground2.png" type="Texture" id=5]
+[ext_resource path="res://Camera2D.gd" type="Script" id=6]
+[ext_resource path="res://Character.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Rope/Hook.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sound/Wavy.wav" type="AudioStream" id=10]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
-[node name="ParallaxBackground" parent="." index="0" instance=ExtResource( 2 )]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+
+[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1024, 600 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Clouds" index="0"]
+
+position = Vector2( 510, 300 )
+scale = Vector2( 0.53125, 0.555556 )
+texture = ExtResource( 3 )
+
+[node name="Ground" type="ParallaxLayer" parent="ParallaxBackground" index="1"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1024, 600 )
+script = ExtResource( 4 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Ground" index="0"]
+
+position = Vector2( 510, 300 )
+texture = ExtResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="." index="1"]
 
@@ -39,7 +81,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-script = ExtResource( 3 )
+script = ExtResource( 6 )
 
 [node name="ShakeTime" type="Timer" parent="Camera2D" index="0"]
 
@@ -48,11 +90,11 @@ wait_time = 0.75
 one_shot = true
 autostart = false
 
-[node name="character" parent="." index="2" instance=ExtResource( 4 )]
+[node name="character" parent="." index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 533.239, 309.648 )
 
-[node name="hook" parent="character" index="2" instance=ExtResource( 5 )]
+[node name="hook" parent="character" index="2" instance=ExtResource( 8 )]
 
 position = Vector2( 2.39142, 54.0098 )
 scale = Vector2( 1.90189, 1.90189 )
@@ -92,12 +134,12 @@ wait_time = 1.5
 one_shot = true
 autostart = false
 
-[node name="GUI" parent="." index="8" instance=ExtResource( 6 )]
+[node name="GUI" parent="." index="8" instance=ExtResource( 9 )]
 
 [node name="Music" type="AudioStreamPlayer" parent="." index="9"]
 
-stream = ExtResource( 7 )
-volume_db = -3.0
+stream = ExtResource( 10 )
+volume_db = -6.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
