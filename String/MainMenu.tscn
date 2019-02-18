@@ -28,7 +28,7 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[node name="MarginContainer" type="MarginContainer" index="0"]
+[node name="MarginContainer" type="MarginContainer"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -285,6 +285,7 @@ _sections_unfolded = [ "Size Flags" ]
 position = Vector2( 250, 288 )
 frames = SubResource( 2 )
 animation = "default"
+frame = 2
 playing = true
 
 [connection signal="button_up" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Start" to="." method="_on_Start_button_up"]
