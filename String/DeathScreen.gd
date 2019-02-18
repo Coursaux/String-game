@@ -7,3 +7,7 @@ func _ready():
 	var random = randi()%8+1
 	
 	# get_tree().change_scene("res://MainMenu.tscn")
+
+
+func _on_Timer_timeout():
+	get_tree().change_scene("res://MainMenu.tscn")
