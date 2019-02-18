@@ -94,3 +94,16 @@ func getLocation(random):
 
 func _on_timeToShake_timeout():
 	$Camera2D.startShake()
+
+
+func _on_CLoudTimer_timeout():
+	spawnCloud()
+	
+func spawnCloud():
+	var rand = randi()%6+1
+	var obstacle = preload("res://cloud1.tscn")
+	var obstacleInstance = obstacle.instance()
+	obstacleInstance.init(speedup)
+	var random = Vector2(1024, rand_range(0, get_viewport() / 2))
+	obstacleInstance.set_position(random)
+	get_node("/root/Main").add_child(obstacleInstance)
