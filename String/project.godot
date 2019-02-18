@@ -14,19 +14,28 @@ config/name="String"
 run/main_scene="res://MainMenu.tscn"
 config/icon="res://icon.png"
 
-[input]
+[autoload]
 
-ui_quit=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"unicode":0,"echo":false,"script":null)
- ]
+global="*res://global.gd"
 
 [debug]
 
 settings/stdout/print_fps=true
 
+[input]
+
+ui_quit=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"unicode":0,"echo":false,"script":null)
+ ]
+
 [layer_names]
 
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Obstacles"
+
+[physics]
+
+common/physics_fps=240
+2d/default_gravity=100
 
 [rendering]
 
