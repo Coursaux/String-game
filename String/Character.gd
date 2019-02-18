@@ -26,7 +26,6 @@ func _physics_process(delta):
 	
 	elif current:
 		var relative = current - previous
-		#print("relative", relative)
 		var collision = move_and_collide(relative)
 		if collision:
 			get_tree().change_scene("res://MainMenu.tscn")
