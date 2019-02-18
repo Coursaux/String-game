@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ParallaxLayer.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Clouds/clouds2.png" type="Texture" id=2]
+[ext_resource path="res://Ground.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Ground2.png" type="Texture" id=4]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+
+[node name="Clouds" type="ParallaxLayer" parent="." index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1024, 600 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Sprite" type="Sprite" parent="Clouds" index="0"]
+
+position = Vector2( 510, 300 )
+scale = Vector2( 0.53125, 0.555556 )
+texture = ExtResource( 2 )
+
+[node name="Ground" type="ParallaxLayer" parent="." index="1"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1024, 600 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Sprite" type="Sprite" parent="Ground" index="0"]
+
+position = Vector2( 510, 300 )
+texture = ExtResource( 4 )
+
+

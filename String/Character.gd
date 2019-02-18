@@ -30,10 +30,7 @@ func _physics_process(delta):
 		var relative = current - previous
 		var collision = move_and_collide(relative)
 		if collision:
-			get_tree().change_scene("res://MainMenu.tscn")
+			get_tree().change_scene("res://Box Items/end.tscn")
 		previous = current
 		current = Vector2(0, 0)
 	
-	if is_on_ceiling() or is_on_wall() or is_on_floor():
-		print("epic gamer moment")
-
