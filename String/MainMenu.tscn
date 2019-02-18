@@ -267,7 +267,7 @@ _sections_unfolded = [ "Size Flags" ]
 position = Vector2( 250, 288 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 5
+frame = 4
 playing = true
 
 [connection signal="button_up" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Start" to="." method="_on_Start_button_up"]
