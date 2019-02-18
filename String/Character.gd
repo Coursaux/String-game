@@ -6,6 +6,8 @@ var absolute_override = Vector2(0, 0)
 var previous = Vector2(0, 0)
 var current = Vector2(0, 0)
 
+func _ready():
+	$Wings.play()
 
 func _input(event):
    # Mouse in viewport coordinates

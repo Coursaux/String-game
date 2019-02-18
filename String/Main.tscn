@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://ParallaxLayer.gd" type="Script" id=2]
@@ -8,8 +8,9 @@
 [ext_resource path="res://Camera2D.gd" type="Script" id=6]
 [ext_resource path="res://Character.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Rope/Hook.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sound/Wavy.wav" type="AudioStream" id=9]
 
-[node name="Main" type="Node" index="0"]
+[node name="Main" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -94,8 +95,7 @@ position = Vector2( 533.239, 309.648 )
 
 [node name="hook" parent="character" index="2" instance=ExtResource( 8 )]
 
-position = Vector2( 2.39142, 54.0098 )
-scale = Vector2( 1.90189, 1.90189 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="Spawn" type="Timer" parent="." index="3"]
 
@@ -131,6 +131,16 @@ process_mode = 1
 wait_time = 1.5
 one_shot = true
 autostart = false
+
+[node name="Music" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = ExtResource( 9 )
+volume_db = -3.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+_sections_unfolded = [ "Pause", "Transform", "Z Index" ]
 
 [connection signal="timeout" from="Camera2D/ShakeTime" to="Camera2D" method="_on_ShakeTime_timeout"]
 

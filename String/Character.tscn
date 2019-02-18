@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Character.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Wings/Wings_0.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Sprites/Wings/Wings_3.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Wings/Wings_4.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Wings/Wings_5.png" type="Texture" id=7]
+[ext_resource path="res://Sound/wings_flapping.wav" type="AudioStream" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -39,7 +40,7 @@ position = Vector2( -2.18781, 1.97577 )
 scale = Vector2( 0.886563, 0.886563 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
+frame = 5
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -48,5 +49,16 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -2.20947, -9.22609 )
 scale = Vector2( 2.687, 2.0116 )
 shape = SubResource( 2 )
+
+[node name="Wings" type="AudioStreamPlayer2D" parent="." index="2"]
+
+stream = ExtResource( 8 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 
