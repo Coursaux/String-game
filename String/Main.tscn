@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Character.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GUI.gd" type="Script" id=4]
 
 [node name="Main" type="Node"]
 
@@ -18,14 +20,29 @@ wait_time = 1.0
 one_shot = false
 autostart = true
 
-[node name="Speedup" type="Timer" parent="." index="2"]
+[node name="Score" type="Timer" parent="." index="2"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = true
 
+[node name="Speedup" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[node name="MarginContainer" parent="." index="4" instance=ExtResource( 3 )]
+
+script = ExtResource( 4 )
+
 [connection signal="timeout" from="Spawn" to="." method="_on_Timer_timeout"]
+
+[connection signal="timeout" from="Score" to="character" method="_on_Score_timeout"]
+
+[connection signal="timeout" from="Score" to="MarginContainer" method="_on_Score_timeout"]
 
 [connection signal="timeout" from="Speedup" to="." method="_on_Speedup_timeout"]
 

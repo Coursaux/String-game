@@ -24,7 +24,6 @@ func _on_Timer_timeout():
 	randomize()
 	spawn()
 	$Spawn.wait_time = rand_range(0.5, 3);
-	
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_quit"):

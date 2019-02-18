@@ -6,6 +6,7 @@ var absolute_override = Vector2(0, 0)
 var previous = Vector2(0, 0)
 var current = Vector2(0, 0)
 
+var score = 0
 
 func _input(event):
    # Mouse in viewport coordinates
@@ -36,3 +37,6 @@ func _physics_process(delta):
 	if is_on_ceiling() or is_on_wall() or is_on_floor():
 		print("epic gamer moment")
 
+
+func _on_Score_timeout():
+	pass # replace with function body
