@@ -22,7 +22,6 @@ func _physics_process(delta):
 		#print("absolute_override", absolute_override)
 		previous = absolute_override
 		absolute_override = Vector2(0, 0)
-		print(previous)
 	
 	elif current:
 		var relative = current - previous
@@ -31,7 +30,5 @@ func _physics_process(delta):
 			get_tree().change_scene("res://MainMenu.tscn")
 		previous = current
 		current = Vector2(0, 0)
-	
-	if is_on_ceiling() or is_on_wall() or is_on_floor():
-		print("epic gamer moment")
+	print(previous)
 
