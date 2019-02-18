@@ -28,7 +28,7 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[node name="MarginContainer" type="MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0

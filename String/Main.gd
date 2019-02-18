@@ -9,6 +9,7 @@ func _ready():
 	get_viewport().warp_mouse(screen_center)
 	$character.set_mouse_position(screen_center)
 	randomize()
+	#spawnlaser()
 	$Music.play()
 
 func _on_Timer_timeout():
