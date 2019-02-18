@@ -28,7 +28,7 @@ func _physics_process(delta):
 		var relative = current - previous
 		var collision = move_and_collide(relative)
 		if collision:
-			get_tree().change_scene("res://MainMenu.tscn")
+			get_tree().change_scene("res://DeathScreen.tscn")
 		previous = current
 		current = Vector2(0, 0)
 	
