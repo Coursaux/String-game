@@ -268,7 +268,7 @@ _sections_unfolded = [ "Size Flags" ]
 position = Vector2( 250, 288 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 3
+frame = 2
 playing = true
 
 [node name="ParallaxBackground" parent="." index="1" instance=ExtResource( 9 )]
