@@ -1,18 +1,20 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Title.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Wings/Wings_0.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Wings/Wings_1.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Wings/Wings_2.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Wings/Wings_3.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Wings/Wings_4.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Wings/Wings_5.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/play.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/quit.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Wings/Wings_0.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Wings/Wings_1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Wings/Wings_2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Wings/Wings_3.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Wings/Wings_4.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Wings/Wings_5.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
@@ -31,26 +33,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
-_sections_unfolded = [ "custom_constants" ]
+_sections_unfolded = [ "Margin", "custom_constants" ]
 
-[node name="ColorRect" type="ColorRect" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 8.0
-margin_right = 1024.0
-margin_bottom = 600.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." index="1"]
+[node name="HBoxContainer" type="HBoxContainer" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -192,10 +177,14 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Start"
 flat = false
 align = 1
-_sections_unfolded = [ "Size Flags" ]
+
+[node name="Sprite" type="Sprite" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Start" index="0"]
+
+position = Vector2( 83.2339, 42.3582 )
+scale = Vector2( 0.36874, 0.311827 )
+texture = ExtResource( 3 )
 
 [node name="Quit" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" index="1"]
 
@@ -217,10 +206,15 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Quit"
 flat = false
 align = 1
 _sections_unfolded = [ "Size Flags" ]
+
+[node name="Sprite" type="Sprite" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Quit" index="0"]
+
+position = Vector2( 88.7587, 47.7888 )
+scale = Vector2( 0.38481, 0.392104 )
+texture = ExtResource( 4 )
 
 [node name="Control3" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer" index="2"]
 
@@ -279,7 +273,7 @@ _sections_unfolded = [ "Size Flags" ]
 position = Vector2( 250, 288 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
+frame = 2
 playing = true
 
 [connection signal="button_up" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Start" to="." method="_on_Start_button_up"]
