@@ -2,6 +2,10 @@ extends Camera2D
     # Animate this to increase/decrease/fade the shaking
 var shake_amount = 10
 var shake = false
+var offsets 
+
+func _ready():
+	offsets = get_offset()
 
 func _process(delta):
 	if shake:
@@ -13,3 +17,4 @@ func startShake():
 
 func _on_ShakeTime_timeout():
 	shake = false
+	set_offset(offsets)

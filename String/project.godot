@@ -32,5 +32,6 @@ ui_quit=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"
 
 quality/intended_usage/framebuffer_allocation=0
 quality/2d/use_pixel_snap=true
+environment/default_clear_color=Color( 0.679688, 0.647827, 0.647827, 1 )
 quality/filters/msaa=1
 environment/default_environment="res://default_env.tres"
