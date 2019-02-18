@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://LaserStart.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Laser.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Laseralpha.png" type="Texture" id=3]
+[ext_resource path="res://Sound/laser_charge.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -18,7 +19,7 @@ animations = [ {
 "speed": 20.0
 } ]
 
-[node name="LaserStart" type="KinematicBody2D"]
+[node name="LaserStart" type="KinematicBody2D" index="0"]
 
 show_behind_parent = true
 position = Vector2( 30, 10 )
@@ -48,6 +49,17 @@ process_mode = 1
 wait_time = 1.5
 one_shot = true
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

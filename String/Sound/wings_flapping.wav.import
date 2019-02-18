@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/wings_flapping.wav-7d42418cc0b752c437c05a74ff8a2eda.sample"
+
+[deps]
+
+source_file="res://Sound/wings_flapping.wav"
+dest_files=[ "res://.import/wings_flapping.wav-7d42418cc0b752c437c05a74ff8a2eda.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
