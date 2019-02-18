@@ -31,7 +31,7 @@ ui_quit=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"
 [physics]
 
 common/physics_fps=240
-2d/default_gravity=100
+2d/default_gravity=500
 
 [rendering]
 

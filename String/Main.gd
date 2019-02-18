@@ -33,7 +33,7 @@ func _on_FirstLaser_timeout():
 	firstlaser = true
 
 func _on_Lasers_timeout():
-	$Lasers.wait_time = rand_range(20, 40);
+	$Lasers.wait_time = rand_range(10, 25);
 	if firstlaser:
 		spawnlaser()
 
