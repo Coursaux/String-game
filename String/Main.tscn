@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://ParallaxLayer.gd" type="Script" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Camera2D.gd" type="Script" id=6]
 [ext_resource path="res://Character.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Rope/Hook.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sound/Wavy.wav" type="AudioStream" id=10]
 
 [node name="Main" type="Node" index="0"]
 
@@ -114,7 +116,7 @@ autostart = true
 [node name="FirstLaser" type="Timer" parent="." index="5"]
 
 process_mode = 1
-wait_time = 30.0
+wait_time = 20.0
 one_shot = true
 autostart = true
 
@@ -131,6 +133,17 @@ process_mode = 1
 wait_time = 1.5
 one_shot = true
 autostart = false
+
+[node name="GUI" parent="." index="8" instance=ExtResource( 9 )]
+
+[node name="Music" type="AudioStreamPlayer" parent="." index="9"]
+
+stream = ExtResource( 10 )
+volume_db = -3.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="timeout" from="Camera2D/ShakeTime" to="Camera2D" method="_on_ShakeTime_timeout"]
 

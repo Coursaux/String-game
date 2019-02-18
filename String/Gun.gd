@@ -26,6 +26,7 @@ func spawn():
 	obstacleInstance.init(speedup)
 	obstacleInstance.set_position(get_position())
 	get_node("/root/Main").add_child(obstacleInstance)
+	$GunShot.play()
 
 
 func _on_Bullets_timeout():
