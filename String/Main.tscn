@@ -95,8 +95,7 @@ position = Vector2( 533.239, 309.648 )
 
 [node name="hook" parent="character" index="2" instance=ExtResource( 8 )]
 
-position = Vector2( 2.39142, 54.0098 )
-scale = Vector2( 1.90189, 1.90189 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="Spawn" type="Timer" parent="." index="3"]
 
